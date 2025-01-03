@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DataProtection.Web.Models;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace DataProtection.Web.Controllers
 {
@@ -13,10 +14,17 @@ namespace DataProtection.Web.Controllers
     {
         private readonly AspNetSecurityDbContext _context;
 
-        public ProductsController(AspNetSecurityDbContext context)
+        private readonly IDataProtector _dataProtector;
+        private readonly IDataProtector _dataProtectorForName;
+
+        public ProductsController(AspNetSecurityDbContext context, IDataProtectionProvider dataProtectorProvider)
         {
             _context = context;
+            _dataProtector = dataProtectorProvider.CreateProtector("ProductIdProtector");
+            _dataProtectorForName = dataProtectorProvider.CreateProtector("ProductNameProtector");
         }
+
+
 
         // GET: Products
         public async Task<IActionResult> Index()

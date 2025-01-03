@@ -12,7 +12,11 @@ builder.Services.AddDbContext<AspNetSecurityDbContext>(opt =>
     opt.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=AspNetSecurityDb;Trusted_Connection=True;");
 });
 
+
+// Data Protection Registration
 builder.Services.AddDataProtection();
+
+
 
 var app = builder.Build();
 
