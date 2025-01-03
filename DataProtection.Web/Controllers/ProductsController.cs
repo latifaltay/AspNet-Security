@@ -14,14 +14,14 @@ namespace DataProtection.Web.Controllers
     {
         private readonly AspNetSecurityDbContext _context;
 
-        private readonly IDataProtector _dataProtector;
-        private readonly IDataProtector _dataProtectorForName;
+        private readonly IDataProtector _dataProtectorForProductId;
+        //private readonly IDataProtector _dataProtectorForName;
 
         public ProductsController(AspNetSecurityDbContext context, IDataProtectionProvider dataProtectorProvider)
         {
             _context = context;
-            _dataProtector = dataProtectorProvider.CreateProtector("ProductIdProtector");
-            _dataProtectorForName = dataProtectorProvider.CreateProtector("ProductNameProtector");
+            _dataProtectorForProductId = dataProtectorProvider.CreateProtector("ProductIdProtector");
+            //_dataProtectorForName = dataProtectorProvider.CreateProtector("ProductNameProtector");
         }
 
 
@@ -29,19 +29,30 @@ namespace DataProtection.Web.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Products.ToListAsync());
+            var products = await _context.Products.ToListAsync();
+
+            products.ForEach(x =>
+            {
+                x.EncryptedId = _dataProtectorForProductId.Protect(x.Id.ToString());
+            });
+
+            return View(products);
         }
 
+
+
         // GET: Products/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
+            int decryptedId = int.Parse(_dataProtectorForProductId.Unprotect(id));
+
             var product = await _context.Products
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == decryptedId);
             if (product == null)
             {
                 return NotFound();
@@ -49,6 +60,8 @@ namespace DataProtection.Web.Controllers
 
             return View(product);
         }
+
+
 
         // GET: Products/Create
         public IActionResult Create()

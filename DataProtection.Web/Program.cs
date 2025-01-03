@@ -16,8 +16,6 @@ builder.Services.AddDbContext<AspNetSecurityDbContext>(opt =>
 // Data Protection Registration
 builder.Services.AddDataProtection();
 
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

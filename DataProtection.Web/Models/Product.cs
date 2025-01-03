@@ -14,4 +14,5 @@ public partial class Product
     public string? Color { get; set; }
 
     public int? ProductCategoryId { get; set; }
+
 }
