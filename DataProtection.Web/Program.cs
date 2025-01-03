@@ -1,7 +1,18 @@
+using DataProtection.Web.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+builder.Services.AddDbContext<AspNetSecurityDbContext>(opt => 
+{
+    opt.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=AspNetSecurityDb;Trusted_Connection=True;");
+});
+
+builder.Services.AddDataProtection();
 
 var app = builder.Build();
 
