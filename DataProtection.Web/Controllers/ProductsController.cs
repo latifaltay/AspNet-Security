@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DataProtection.Web.Models;
 using Microsoft.AspNetCore.DataProtection;
+using System.Security.Cryptography;
 
 namespace DataProtection.Web.Controllers
 {
@@ -31,9 +32,13 @@ namespace DataProtection.Web.Controllers
         {
             var products = await _context.Products.ToListAsync();
 
+
+            var timeLimitedProtector = _dataProtectorForProductId.ToTimeLimitedDataProtector();
+
+
             products.ForEach(x =>
             {
-                x.EncryptedId = _dataProtectorForProductId.Protect(x.Id.ToString());
+                x.EncryptedId = timeLimitedProtector.Protect(x.Id.ToString(), TimeSpan.FromSeconds(5));
             });
 
             return View(products);
@@ -49,16 +54,26 @@ namespace DataProtection.Web.Controllers
                 return NotFound();
             }
 
-            int decryptedId = int.Parse(_dataProtectorForProductId.Unprotect(id));
+            var timeLimitedProtector = _dataProtectorForProductId.ToTimeLimitedDataProtector();
 
-            var product = await _context.Products
-                .FirstOrDefaultAsync(m => m.Id == decryptedId);
-            if (product == null)
+            try
             {
-                return NotFound();
-            }
+                int decryptedId = int.Parse(timeLimitedProtector.Unprotect(id));
+                var product = await _context.Products
+                .FirstOrDefaultAsync(m => m.Id == decryptedId);
+                if (product == null)
+                {
+                    return NotFound();
+                }
 
-            return View(product);
+                return View(product);
+            }
+            catch (CryptographicException ex)
+            {
+                Console.WriteLine($"Hata: {ex.Message}");
+                return BadRequest("Geçersiz veya süresi dolmuş Id"); 
+            }
+               
         }
 
 

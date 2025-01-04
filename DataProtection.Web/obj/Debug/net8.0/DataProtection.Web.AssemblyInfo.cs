@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DataProtection.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2f4d49a5769cd8ca643b3c6d82adf3bcac4c8e2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8211bfa23521e5bc0a5a46e962ca019314a707bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("DataProtection.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DataProtection.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
