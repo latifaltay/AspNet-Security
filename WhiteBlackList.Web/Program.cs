@@ -1,3 +1,4 @@
+using WhiteBlackList.Web.Filters;
 using WhiteBlackList.Web.MiddleWares;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.Configure<IPList>(builder.Configuration.GetSection("IPList"));
+
+builder.Services.AddScoped<CheckWhiteList>();
 
 var app = builder.Build();
 

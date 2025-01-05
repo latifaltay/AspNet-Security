@@ -7,6 +7,7 @@ namespace WhiteBlackList.Web.MiddleWares
     {
 
         private readonly RequestDelegate _next;
+
         private readonly IPList _iPList;
 
         public IPSafeMiddleWare(RequestDelegate next, IOptions<IPList> ipList)
