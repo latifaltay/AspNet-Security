@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhiteBlackList.Web", "White
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecretProtection.Web", "SecretProtection.Web\SecretProtection.Web.csproj", "{C62AE8E9-96E7-416E-88CC-4C3202C32B86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWeb.API", "MyWeb.API\MyWeb.API.csproj", "{C3BBF852-DE9F-43F9-99FB-3168EB2DE942}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWeb.Web", "MyWeb.Web\MyWeb.Web.csproj", "{AE79B74B-975C-4948-BF39-E0B07954E470}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{C62AE8E9-96E7-416E-88CC-4C3202C32B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C62AE8E9-96E7-416E-88CC-4C3202C32B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C62AE8E9-96E7-416E-88CC-4C3202C32B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3BBF852-DE9F-43F9-99FB-3168EB2DE942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BBF852-DE9F-43F9-99FB-3168EB2DE942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3BBF852-DE9F-43F9-99FB-3168EB2DE942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3BBF852-DE9F-43F9-99FB-3168EB2DE942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE79B74B-975C-4948-BF39-E0B07954E470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE79B74B-975C-4948-BF39-E0B07954E470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE79B74B-975C-4948-BF39-E0B07954E470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE79B74B-975C-4948-BF39-E0B07954E470}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

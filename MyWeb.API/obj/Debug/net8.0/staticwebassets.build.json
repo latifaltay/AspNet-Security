@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "p3END+MHv4xPf3IKGOWOgv+AAaqD1zFmY+pGp+edTwc=",
+  "Source": "MyWeb.API",
+  "BasePath": "_content/MyWeb.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
