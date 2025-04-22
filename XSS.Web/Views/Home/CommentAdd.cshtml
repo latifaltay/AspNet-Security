@@ -25,9 +25,19 @@
     <h1>
         Yorumlar
     </h1>
-    <strong>@ViewBag.name</strong>
+@*     <strong>@ViewBag.name</strong>
     <hr />
-    <span>@Html.Raw(ViewBag.comment)</span>
+    <span>@Html.Raw(ViewBag.comment)</span> *@
+
+
+    @if (ViewBag.comments != null)
+    {
+        foreach (var comment in ViewBag.comments as string[])
+        {
+            <span>@Html.Raw(comment)</span>
+            <hr/>
+        }
+    }
 
 </body>
 </html>

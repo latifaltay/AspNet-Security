@@ -16,6 +16,14 @@ namespace XSS.Web.Controllers
         
         public IActionResult CommentAdd() 
         {
+            HttpContext.Response.Cookies.Append("Email", "admin@admin.com");
+            HttpContext.Response.Cookies.Append("Password", "Admin123");
+
+            if (System.IO.File.Exists("Comment.txt"))
+            {
+                ViewBag.comments = System.IO.File.ReadAllLines("Comment.txt");
+            }
+
             return View();
         }
 
@@ -26,15 +34,18 @@ namespace XSS.Web.Controllers
             ViewBag.name = name;
             ViewBag.comment = comment;
 
-            return View();
+            System.IO.File.AppendAllText("Comment.txt", $"{name} - {comment}\n");
+
+            return RedirectToAction();
         }
+
 
         public IActionResult Index()
         {
-            HttpContext.Response.Cookies.Append("Email", "admin@admin.com");
-            HttpContext.Response.Cookies.Append("Password", "Admin123");
             return View();
         }
+
+
 
         public IActionResult Privacy()
         {
