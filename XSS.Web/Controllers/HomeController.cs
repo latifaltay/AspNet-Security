@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Mvc;
 using XSS.Web.Models;
@@ -35,7 +35,7 @@ namespace XSS.Web.Controllers
             return View();
         }
 
-
+        [IgnoreAntiforgeryToken]
         [HttpPost]
         public IActionResult CommentAdd(string name, string comment)
         {
@@ -48,6 +48,26 @@ namespace XSS.Web.Controllers
             System.IO.File.AppendAllText("Comment.txt", $"{name} - {comment}\n");
 
             return RedirectToAction();
+        }
+
+        public IActionResult login(string returnUrl="/")
+        {
+            TempData["returnUrl"] = returnUrl;
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult login(string email, string password)
+        {
+            string retunrUrl = TempData["returnUrl"].ToString();
+            //email ve password kontrolü yapılıyor
+
+            if (Url.IsLocalUrl(retunrUrl)) 
+            {
+                return Redirect(retunrUrl);
+
+            }
+            return Redirect("/");
         }
 
 

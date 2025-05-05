@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9DZ1uOQzPwg=",
+  "dgSpecHash": "Hm1pKrYRnnE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\l.altay\\Desktop\\Personel_Warehouse\\AspNet-Security\\DataProtection.Web\\DataProtection.Web.csproj",
+  "projectFilePath": "C:\\Users\\l.altay\\Desktop\\Personel_Workspace\\AspNet-Security\\DataProtection.Web\\DataProtection.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\l.altay\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\l.altay\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

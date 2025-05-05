@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\l.altay\\Desktop\\Personel_Warehouse\\AspNet-Security\\WhiteBlackList.Web\\WhiteBlackList.Web.csproj": {}
+    "C:\\Users\\l.altay\\Desktop\\Personel_Workspace\\AspNet-Security\\WhiteBlackList.Web\\WhiteBlackList.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\l.altay\\Desktop\\Personel_Warehouse\\AspNet-Security\\WhiteBlackList.Web\\WhiteBlackList.Web.csproj": {
+    "C:\\Users\\l.altay\\Desktop\\Personel_Workspace\\AspNet-Security\\WhiteBlackList.Web\\WhiteBlackList.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\l.altay\\Desktop\\Personel_Warehouse\\AspNet-Security\\WhiteBlackList.Web\\WhiteBlackList.Web.csproj",
+        "projectUniqueName": "C:\\Users\\l.altay\\Desktop\\Personel_Workspace\\AspNet-Security\\WhiteBlackList.Web\\WhiteBlackList.Web.csproj",
         "projectName": "WhiteBlackList.Web",
-        "projectPath": "C:\\Users\\l.altay\\Desktop\\Personel_Warehouse\\AspNet-Security\\WhiteBlackList.Web\\WhiteBlackList.Web.csproj",
+        "projectPath": "C:\\Users\\l.altay\\Desktop\\Personel_Workspace\\AspNet-Security\\WhiteBlackList.Web\\WhiteBlackList.Web.csproj",
         "packagesPath": "C:\\Users\\l.altay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\l.altay\\Desktop\\Personel_Warehouse\\AspNet-Security\\WhiteBlackList.Web\\obj\\",
+        "outputPath": "C:\\Users\\l.altay\\Desktop\\Personel_Workspace\\AspNet-Security\\WhiteBlackList.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

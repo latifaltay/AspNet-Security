@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WhiteBlackList.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b0b28f38086a6f8cb0f1700d7dc9b09af78ed96")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f45efe8cbd063b35b2a37a121258ba327087082")]
 [assembly: System.Reflection.AssemblyProductAttribute("WhiteBlackList.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WhiteBlackList.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
